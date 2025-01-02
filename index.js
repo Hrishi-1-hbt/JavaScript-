@@ -1217,3 +1217,452 @@
                 // Array.from(children3).forEach(child3 =>{
                 //         child3.style.backgroundColor="RED";
                 // })
+
+//-------------------------------------------------------------------------------------------------------
+//--------------------ADD & CHANGE HTML -DOM ------------------------------------------------------------
+
+//--------------------EXAMPLE 1 ----------------------------------------
+
+//STEP1 - CREATE  THE ELEMENT
+                // const newH1 = document.createElement("h1");
+
+//STEP2 - ADD ATTRIBUTES/PROPERTIES
+                // newH1.textContent ="i like pizza";
+                // newH1.id="myH1";
+
+                // newH1.style.color="tomato";
+                // newH1.style.textAlign="center";
+
+//STEP3 - APPEND ELEMENT TO DOM
+                //document.body.append(newH1);
+                //document.body.prepend(newH1);
+                // document.getElementById('box1').append(newH1); 
+                // document.getElementById('box2');
+                // document.body.insertBefore(newH1,box2);
+
+                // const boxes = document.querySelectorAll(".box");
+                // document.body.insertBefore(newH1,boxes[4]);
+
+
+
+// step4 REMOVE HTML ELEMENT
+
+                // document.getElementById("box1").removeChild(newH1);
+
+ 
+ //--------------------EXAMPLE 2 ----------------------------------------
+
+// //STEP1 - CREATE  THE ELEMENT
+//                  const newLi = document.createElement("li");
+
+//STEP2 - ADD ATTRIBUTES/PROPERTIES
+                // newLi.textContent ="coconut";
+                //  newLi.id="coconut";
+                //  newLi.style.fontWeight="bold";
+                //  newLi.style.backgroundColor="lightgreen";
+                // newLi.style.textAlign="center";
+
+//STEP3 - APPEND ELEMENT TO DOM
+                //document.body.append(newLi);
+                //document.body.prepend(newLi);
+                // document.getElementById('fruits').prepend(newLi); 
+                // document.getElementById('apple');
+                // document.body.insertBefore(newLi,orange);
+
+                // const fruits = document.querySelectorAll("#fruits");
+                // document.body.insertBefore(newLi,fruits[4]);
+
+
+
+// step4 REMOVE HTML ELEMENT
+
+                // document.getElementById("orange").removeChild(newLi);
+
+//--------------------------------------------------------------------------------------------------------------------------------------------
+
+//HIDE - SHOW IMAGE
+
+                // const myBtn = document.getElementById("myBtn");
+                // const myImg = document.getElementById("myImg");
+
+                // myBtn.addEventListener("click",event=>{
+                //         if(myImg.style.display === "none"){
+                //         myImg.style.display="block";
+                //         myBtn.textContent ="Hide"
+                //         }else{
+                //         myImg.style.display="none";
+                //         myBtn.textContent ="show"
+                //         }
+                
+                // })
+
+//-----------------------------------------------------------------------------------------------------------------------------------------
+
+// NODELIST - Static collections of HTML element by(id, class , elelment )
+//            Can be created by using querySelectorAll()
+//            similer  to an array , but no(map , filter , reduce)
+//            NODELIST wont update to automatically reflect changes 
+
+let buttons  = document.querySelectorAll(".myButton");
+
+///ADD HTML/CSS PROPERTIES
+
+                // buttons.forEach(button =>{
+                // button.style.backgroundColor ="green";
+                // button.textContent += "😉"
+                // })
+
+/// CLICK EVENT LISTENER
+                // buttons.forEach(button =>{
+                // button.addEventListener("click",event=>{
+                //         event.target.style.backgroundColor ="tomato";
+                // });
+               
+                // });
+
+
+/// MOUSEOVER + MOUSEOUT  event listener
+
+                // buttons.forEach(button =>{
+                //         button.addEventListener("mouseover",event=>{
+                //                 event.target.style.backgroundColor ="hsl(205, 100%, 50%)";
+                //         });
+                
+                //         });
+                // buttons.forEach(button =>{
+                //         button.addEventListener("mouseout",event=>{
+                //                 event.target.style.backgroundColor =" hsl(205, 100%, 60%)";
+                //         });
+                        
+                //         });
+//ADD AN ELEMENT
+
+                // const newButton = document.createElement("button");  //STEP 1
+
+                // newButton.textContent ="Button 5"; //STEP 2
+                // newButton.classList = "myButton";
+
+                // document.body.appendChild(newButton); //STEP 3
+
+
+                // buttons = document.querySelectorAll(".myButton");
+
+//REMOVE AN ELEMENT
+
+                // buttons.forEach(button =>{
+                //         button.addEventListener("click", event =>{
+                //                 event.target.remove();
+                //                 buttons = document.querySelectorAll(".myBottons");
+                                
+
+                //         });
+                // });
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// CLASSLIST - element property in javascript used to interact 
+//             WITH  an element's list of classes (CSS classes)
+//             Allows you To make reusable classes for many elements
+//             across your webpage
+
+// add()
+// remove()
+// taggle(Remove if present , Add if Not )
+// replace(oldClass, newClass)
+// contain()
+
+                // const Mybtn = document.getElementById('Mybtn');
+
+                // Mybtn.classList.add("enabled");
+
+                // //Mybtn.classList.remove("enabled");
+
+                // Mybtn.classList.add("hover");
+
+                // Mybtn.classList.remove("hover");
+
+                // Mybtn.addEventListener("mouseover",event=>{
+                //         Mybtn.classList.add("hover");
+                // });
+
+                // Mybtn.addEventListener("mouseout",event=>{
+                //         Mybtn.classList.remove("hover");
+                // });
+
+
+
+
+                // Mybtn.addEventListener("click",event=>{
+                // if(event.target.classList.contains("disable")){
+                //         event.target.textContent +="😡"
+                // }else{
+                //         event.target.classList.replace("enabled","disable");
+                // }
+
+                        
+                // });
+                //  buttons.forEach(button =>{
+                //      button.addEventListener("mouseover",event=>{
+                //          event.target.classList.toggle("hover") ;
+                //         })
+                                
+                // });
+                // buttons.forEach(button =>{
+                //         button.addEventListener("mouseout",event=>{
+                //             event.target.classList.toggle("hover") ;
+                //            })
+                                   
+                //    });
+//-----------------------------------------------------------------------------------------------------------------------------------
+ //CALBACK  HELL =  situation in javascript wher callabacks
+//                    are Nested within other callabacks to the
+//                    degree where the end is dificult to read.
+//                    old pattern to handle asynchronous function
+//                    use precius  * async/await t avoide callback hell
+   
+                        // function task1(callback){
+                        //         setTimeout(()=>{
+                        //                 console.log("task 1 complete");
+                        //                 callback();
+                        //         },1000)
+                        // }
+                        // function task2(callback){
+                        //         setTimeout(()=>{
+                        //                 console.log("task 2 complete");
+                        //                 callback();
+                        //         },2000)
+                        // }
+
+                        // function task3(callback){
+                        //         setTimeout(()=>{
+                        //                 console.log("task 3 complete");
+                        //                 callback();
+                        //         },1500)
+                        // }
+                        // function task4(callback){
+                        //         setTimeout(()=>{
+                        //                 console.log("task 4 complete");
+                        //                 callback();
+                        //         },3000)
+                        // }
+
+                        // task1(()=>{
+                        //         task2(()=>{
+                        //                 task3(()=>{
+                        //                         task4(()=> console.log("All task Completed"))
+                                
+                                
+                        //                 })
+                                
+                        //         })
+
+                        // })
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------
+// PROMISE = an Object that manage asynchronous operations.
+//           wrap a promises object arounf (asynchronous code)
+//           "I PROMISE TO RETURN A VALUE "
+//           pending  -> resolve or rejected
+//           new Promise((resolve,reject)=>{asynchronous code})
+
+//DO THESE CHORES IN ORDER
+
+//1. WALK THE DOG
+//2. CLEAN THE KITCHEN
+//3. TAKE OUT THE TRASH
+
+                // function walkDog(){
+                        
+                //         return new Promise((resolve,reject)=>{
+                //                 setTimeout(()=>{
+
+                //                         const dogWalked = true;
+
+                //                         if(dogWalked){
+                //                                 resolve("You walk the dog");
+                //                         }else{
+                //                                 reject("you Didn't walk the dog")
+                //                         }
+                                
+                                        
+                //                 },1500);
+                        
+                //         })
+                // }
+                // function cleankitchen(){
+
+                //         return new Promise((resolve,reject)=>{
+                //         setTimeout(() => {
+                //                 const kitchenCleaned  = false;
+
+                //                         if(kitchenCleaned){
+                //                                 resolve("You clean the kitchen  ");
+                //                         }else{
+                //                                 reject("you Didn't clean the kitchen")
+                //                         }
+                                
+                        
+                //         }, 2500);
+                // })
+                // }
+                // function takeOuttrash(){
+                //         return new Promise((resolve,reject)=>{
+                //         setTimeout(() => {
+                //                 const takeOuttrashed  = true;
+
+                //                         if(takeOuttrashed){
+                //                                 resolve("You take the trash   ")
+                //                         }else{
+                //                                 reject("you Didn't take the trash")
+                //                         }
+                                
+                                
+                //         }, 2500);
+                // })
+                // }
+                // walkDog().then(value => {console.log(value); return cleankitchen()})
+                //         .then(value => {console.log(value); return takeOuttrash()})
+                //         .then(value => {console.log(value); console.log("Finished All Work")})
+                //         .catch(error=>console.error(error));
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+// async /await  = Async  = makes a function return a promises
+//                 await   = makes an async function  wait for a promises
+
+//                 Allows you asynchronous code in a SYNCHRONOUS manner
+//                 Async doesn't  have resolve or reject parameter
+//                 Everything  after await is placed in an event queue
+
+
+                        // function walkDog(){
+                                                
+                        //                         return new Promise((resolve,reject)=>{
+                        //                                 setTimeout(()=>{
+
+                        //                                         const dogWalked = true;
+
+                        //                                         if(dogWalked){
+                        //                                                 resolve("You walk the dog");
+                        //                                         }else{
+                        //                                                 reject("you Didn't walk the dog")
+                        //                                         }
+                                                        
+                                                                
+                        //                                 },1500);
+                                                
+                        //                         })
+                        //                 }
+                        // function cleankitchen(){
+
+                        //                         return new Promise((resolve,reject)=>{
+                        //                         setTimeout(() => {
+                        //                                 const kitchenCleaned  = false;
+
+                        //                                         if(kitchenCleaned){
+                        //                                                 resolve("You clean the kitchen  ");
+                        //                                         }else{
+                        //                                                 reject("you Didn't clean the kitchen")
+                        //                                         }
+                                                        
+                                                
+                        //                         }, 2500);
+                        //                 })
+                        //                 }
+                        // function takeOuttrash(){
+
+
+
+                        //                         return new Promise((resolve,reject)=>{
+                        //                         setTimeout(() => {
+                        //                                 const takeOuttrashed  = true;
+
+                        //                                         if(takeOuttrashed){
+                        //                                                 resolve("You take the trash   ")
+                        //                                         }else{
+                        //                                                 reject("you Didn't take the trash")
+                        //                                         }
+                                                        
+                                                        
+                        //                         }, 2500);
+                        //                 })
+                        //                 }
+
+
+
+                                
+                        
+                        // async function dochores() {
+
+                        //         try {
+                        //         const walkDogResult  = await walkDog();
+                        //         console.log(walkDogResult);
+
+                        //         const cleankitchenResult  = await cleankitchen();
+                        //         console.log(cleankitchenResult);
+
+                        //         const takeOuttrashResult  = await takeOuttrash();
+                        //         console.log(takeOuttrashResult);
+
+                        //         console.log("You Finish The works..")
+                        //         } catch (error) {
+                        //                 console.error(error);
+                                        
+                        //         }
+                                
+                        // }
+                        // dochores();
+//---------------------------------------------------------------------------------------------------------------------------------------------------
+
+// JSON -  (Javascript object Notation) data-interchange format
+//         used for exchange data between a server and a web application
+//         JSON files{key:value} OR [value1, value2 , value3]
+
+//         JSON.stringify() = converts a js objects to a string
+//         JSON. parse() = converts a json string to a JS object
+
+                        // const jsonnames = ["John","abrahm","ali","nadi"];
+
+                        // const jsonperson = {
+                        //         "name":"John",
+                        //         "Age":30,
+                        //         "isEmployed":true
+                        
+                        // }
+                        // const jsonpeople = [{
+
+                        //         "name":"John",
+                        //         "Age":30,
+                        //         "isEmployed":true
+                        
+                        // },
+                        // {
+                        //         "name":"abrahm",
+                        //         "Age":62,
+                        //         "isEmployed":false
+                                
+                        // },
+                        // {
+                        //         "name":"ali",
+                        //         "Age":45,
+                        //         "isEmployed":true
+                        
+                        // },
+                        // {
+                        //         "name":"nadi",
+                        //         "Age":18,
+                        //         "isEmployed":false
+                        
+                        // }]
+
+                        // //     const jsonString = JSON.stringify(people);
+                        // //     console.log(jsonString)
+
+                        // const parseData = JSON.parse(jsonperson);
+                        // console.log(jsonpeople);
+
+                // fetch("people.json")
+                // .then(response => response.json())
+                // .then(values => value.forEach(value  => console.log(value.isEmployed)));
+
+//-------------------------------------------------------------------------------------------------------------------------------------------
